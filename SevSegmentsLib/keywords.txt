@@ -1,0 +1,6 @@
+SevSegments	KEYWORD1
+set	KEYWORD2
+setHex	KEYWORD2
+turnOff	KEYWORD2
+setCathode	KEYWORD2
+setAnode	KEYWORD2

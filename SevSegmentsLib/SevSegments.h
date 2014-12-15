@@ -20,11 +20,13 @@ class SevSegments
     SevSegments(int a, int b, int c, int d, int e, int f, int g);
     int set(int n);
     int setHex(int hex);
+    int getHex();
     int turnOff();
     void setAnode();
     void setCathode();
   private:
     int _pins[7];
+    int _current;
     int on;
     int off;
     void segOn(int);

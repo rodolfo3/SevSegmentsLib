@@ -16,6 +16,7 @@ SevSegments::SevSegments(int a, int b, int c, int d, int e, int f, int g) {
     pinMode(_pins[i], OUTPUT);
   }
   setCathode();
+
 }
 
 int SevSegments::turnOff() {
@@ -32,6 +33,10 @@ void SevSegments::setCathode() {
   off = LOW;
 }
 
+int SevSegments::getHex() {
+    return _current;
+}
+
 int SevSegments::set(int n) {
   // turn the number "n" on (hex digit supported)
   if (n>15) {
@@ -41,6 +46,7 @@ int SevSegments::set(int n) {
 }
 
 int SevSegments::setHex(int hex) {
+  _current = hex;
   for (int i=0; i<7; i++) {
     if (hex & (1 << i)) {
       segOn(6 - i);

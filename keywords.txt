@@ -1,4 +1,5 @@
 SevSegments	KEYWORD1
+SevSegmentsArray KEYWORD1
 set	KEYWORD2
 setHex	KEYWORD2
 turnOff	KEYWORD2

@@ -7,12 +7,10 @@
  * pin is the pin attached to the GND/v++ of the segment display
  * other attributes are the same of SevSegments
  */
-class MultiSevSegment
-{
+class MultiSevSegments {
   public:
-    MultiSevSegment(int pin, int a, int b, int c, int d, int e, int f, int g);
+    MultiSevSegments(int pin, SevSegments *seg);
     int set(int n);
-    void update();
     void turnOn();
     void turnOff();
     void setCathode();
@@ -25,4 +23,16 @@ class MultiSevSegment
     int off;
 };
 
+class SevSegmentsArray {
+    public:
+        SevSegmentsArray(int pins[], SevSegments *seg);
+        int set(int pos, int n);
+        void update();
+    private:
+        MultiSevSegments **_segments;
+        int _size;
+        int _current;
+        unsigned long _previous;
+        const int interval = 100;
+};
 #endif
